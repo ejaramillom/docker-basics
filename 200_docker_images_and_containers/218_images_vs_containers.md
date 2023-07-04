@@ -18,11 +18,11 @@ image => container 1
 
 you can find prebuilt images to run
 
-`
+```
 docker pull node
 docker run node
 docker ps -a // docker processes all
 docker run -it node // docker interactive node shell
-`
+```
 
 
