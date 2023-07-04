@@ -28,6 +28,6 @@ then we can build the image
 
 ```
 docker build .
-docker run -p 2999:80 'name_of_the_thing' # --publish in the port 3000 the functionality of the image in port 80
+docker run -p 2999:80 'name_of_the_thing' # --publish in the port 2999 the functionality of the image in port 80
 docker stop 'name_of_the_thing' # this in another console
 ```
