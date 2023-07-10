@@ -16,7 +16,15 @@
 
 # bind mounts
 
--
+- are managed by the developer
+- the developer knows what folder we are using on our local machine
+- then the container has access to the latest changes in the code
+- are great for persistent, editable source code or data
+- they affect the container
+
+- `docker run -d -p 2999:80 --rm --name feedback-app -v feedback:/app/feedback -v "/Users/teacher/development/teaching/udemy:/app" feedback-node:volumes`
+
+- here the /Users/teacher... route is the absolute path for the volume
 
 
 ### removing anonymous volumes
