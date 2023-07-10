@@ -6,3 +6,22 @@
 - volumes persist when a container is shut down
 - volume is not removed when container is removed
 
+```
+FROM node:14
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 80
+
+VOLUME [ "/app/feedback" ] # whis allows us to connect the folder in the container with the folder in the machine
+
+CMD [ "node", "server.js" ]
+```
+
+- `[ "/app/feedback" ]` is the route inside the container
