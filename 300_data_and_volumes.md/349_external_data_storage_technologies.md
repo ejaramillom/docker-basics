@@ -26,6 +26,14 @@
 
 - here the /Users/teacher... route is the absolute path for the volume
 
+Just a quick note: If you don't always want to copy and use the full path, you can use these shortcuts:
+
+macOS / Linux: `-v $(pwd):/app`
+
+Windows: `-v "%cd%":/app`
+
+You can use these shortcuts depending on which OS you are working on to save some typing.
+
 
 ### removing anonymous volumes
 
