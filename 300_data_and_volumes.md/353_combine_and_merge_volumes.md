@@ -16,7 +16,7 @@ here:
 
 ## create anonymous volumes in the local folder to install the runtime environments
 
-
+- when we assign the `/Users...` route to `/app` route we are overwriting everything in that folder of the container when whe `COPY` the content, but when we assign a new anonymous volume `/app/node_modules` it survives because the longest route assignemnt has priority for docker, so it survives and keeps the folder created with the command `RUN npm install` in the docker file
 
 ### anonymous volume 
 
