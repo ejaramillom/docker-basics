@@ -1,12 +1,12 @@
 # merge
 
-- `docker run -d -p 3000:80 --name feedback-app -v feedback:/app/feedback -v "/Users/teacher/development/teaching/udemy/docker-complete:/app" feedback-node:volumes`
+- `docker run -d -p 3000:80 --name feedback-app -v feedback:/app/feedback -v "/Users/teacher/development/teaching/udemy/docker-complete:/app" -v feedback-node:volumes`
 
 here:
 
 - `-v feedback:/app/feedback` is the route of the anonymous volume (files inside the container)
   
-- `feedback-node:volumes` converts the anonymous volume into a named volume
+- `-v feedback-node:volumes` converts the anonymous volume into a named volume
   
 - `"/Users/teacher/development/teaching/udemy/docker-complete:/app"` creates a bind mount for the volume, it connects a local folder of our choice to the folder of the container we choose, like `/app` (files outside the container)
 
