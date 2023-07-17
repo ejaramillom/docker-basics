@@ -14,3 +14,11 @@ so that we pass user and password to the database connection, like this:
 
 we should replace those hardcoded values into environment variables
 
+## docker ignore file
+
+```
+node_modules
+.git
+Dockerfile
+```
+
