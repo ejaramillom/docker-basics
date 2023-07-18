@@ -15,17 +15,34 @@ services:
       - ./env/mongo.env
       
   backend:
-    image:
-
+    build: ./backend # so that it uses the dockerfile in the project folder
+    # build: 
+      # context: ./backend # path to the docker file and must include all the files that are copied to the container
+      # dockerfile: Dockerfile
+      # args:
+        # some-arg: 1
+    ports: 
+      - '80:80'
+    volumes:
+      - logs:/app/logs
+      - ./backend:/app # this is the bind mount using a relative path, not an absolute path
+      - /app/node_modules
+    env_file:
+      - ./env/backend.env
+    depends_on: # we tell docker compose to run the following services before running the backend
+      - mongodb
     
   frontend:
     image:
 
 volumes: # for NAMED volumes we have to put an additional list in the level of indentation of services
   data:
+  logs:
 
   networks: # we don't need to specify a network because docker compose puts all services in the same network
     goals-net:
       driver: bridge
   
 ```
+
+we can use `mongodb` and `backend` names inside our code, despite the containers are named differently, like `docker-complete_mongo_1` and things like that
