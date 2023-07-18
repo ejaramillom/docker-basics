@@ -33,7 +33,15 @@ services:
       - mongodb
     
   frontend:
-    image:
+    build: ./frontend
+    ports: 
+      - '3000:3000'
+    volumes:
+      - ./frontend/src:/app/src
+    stdin_open: true
+    tty: true # these two options are equivalent to `-it` flag in `docker run`
+    depends_on:
+      - backend
 
 volumes: # for NAMED volumes we have to put an additional list in the level of indentation of services
   data:
