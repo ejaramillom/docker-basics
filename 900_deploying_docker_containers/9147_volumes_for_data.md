@@ -18,5 +18,4 @@
 - platform version `1.4.0`
 - then `force update task`
 
-
 ### remember the possible issue of rollback containers that try to access the db at the same time
